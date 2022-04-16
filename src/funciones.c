@@ -78,14 +78,13 @@ float precioxkm(float precioIngresado, float kmIngresado){
 float resta(float y, float z){
 	int resta;
 
-	resta = y - z;
+	if( y < z){
+		resta = y - z;
+	}
+	else{
+		resta = z - y;
+	}
+
 
 	return resta;
-}
-
-float resultados(float debitoY, float creditoY, float btcY, float pxkmY, float debitoZ, float creditoZ, float btcZ, float pxkmZ, float diferencia){
-
-	printf("\n     Resultados     \nLatam:\na) Precio con tarjeta de débito: %.2f\nb) Precio con tarjeta de crédito: %.2f\nc) Precio pagando con Bitcoin: %.2f\nd) Precio unitario: %.2f\n\nAerolineas:\na) Precio con tarjeta de débito: %.2f\nb) Precio con tarjeta de crédito: %.2f\nc) Precio pagando con Bitcoin: %.2f\nd) Precio unitario: %.2f\n\nLa diferencia de precio es: $%.2f", &debitoY, &creditoY, &btcY, &pxkmY, &debitoZ, &creditoZ, &btcZ, &pxkmZ, &diferencia);
-
-	return 0;
 }

@@ -26,6 +26,7 @@ void menu(){
 	float pxkmLatam;
 
 	do{
+		fflush(stdin);
 		printf("\n\n     MENÚ    \n\n1) Ingresar kilometros.\n2) Ingresar precios de vuelos.\n3) Calculo de costos.\n4) Resultados.\n5) Carga forzada.\n\n6) Salir.\n\nOpcion ingresada:>");
 		scanf("%d", &opcion);
 
