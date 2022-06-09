@@ -10,11 +10,11 @@
 
 void menu();
 
-float km(float km);
+float km(void);
 
-float precioAero(float price);
+float precioAero(void);
 
-float precioLatam(float price);
+float precioLatam(void);
 
 float debito(float precioIngresado);
 

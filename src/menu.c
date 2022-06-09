@@ -12,7 +12,7 @@
 void menu(){
 	setbuf(stdout,NULL);
 	int opcion;
-	float x = 0;
+	float x;
 	float y = 0;
 	float z = 0;
 	float debitoAero;
@@ -27,28 +27,28 @@ void menu(){
 
 	do{
 		fflush(stdin);
-		printf("\n\n     MENÚ    \n\n1) Ingresar kilometros.\n2) Ingresar precios de vuelos.\n3) Calculo de costos.\n4) Resultados.\n5) Carga forzada.\n\n6) Salir.\n\nOpcion ingresada:>");
+		printf("\n\n     MENï¿½    \n\n1) Ingresar kilometros.\n2) Ingresar precios de vuelos.\n3) Calculo de costos.\n4) Resultados.\n5) Carga forzada.\n\n6) Salir.\n\nOpcion ingresada:>");
 		scanf("%d", &opcion);
 
 		switch(opcion){
 			case 1:
-				x = km(x);
+				x = km();
 				while( x < 0){
 					printf("Error. Ingrese valor mayor a 0.");
-					x = km(x);
+					x = km();
 				}
 				break;
 
 			case 2:
-					y = precioAero(y);
+					y = precioAero();
 					while(y <= 0){
 						printf("Error. Ingrese valor mayor a 0");
-						y = precioAero(y);
+						y = precioAero();
 					}
-					z = precioLatam(z);
+					z = precioLatam();
 					while(z <= 0){
 						printf("Error. Ingrese valor mayor a 0.");
-						z = precioLatam(z);
+						z = precioLatam();
 					}
 					break;
 
@@ -80,15 +80,15 @@ void menu(){
 				else{
 					fflush(stdin);
 					printf("*Aerolineas:\n");
-					printf("a) Precio con tarjeta de débito: %.2f\n", debitoAero);
-					printf("b) Precio con tarjeta de crédito: %.2f\n", creditoAero);
-					printf("c) Precio pagando con Bitcoin: %.6f\n", btcAero);
-					printf("d) Precio unitario: %.2f\n", pxkmAero);
+					printf("a) Precio con tarjeta de debito: $%.2f\n", debitoAero);
+					printf("b) Precio con tarjeta de credito: $%.2f\n", creditoAero);
+					printf("c) Precio pagando con Bitcoin: $%.6f\n", btcAero);
+					printf("d) Precio unitario: $%.2f\n", pxkmAero);
 					printf("\n*Latam:\n");
-					printf("a) Precio con tarjeta de débito: %.2f\n", debitoLatam);
-					printf("b) Precio con tarjeta de crédito: %.2f\n", creditoLatam);
-					printf("c) Precio pagando con Bitcoin: %.6f\n", btcLatam);
-					printf("d) Precio unitario: %.2f\n\nAerolineas:\n", pxkmLatam);
+					printf("a) Precio con tarjeta de debito: $%.2f\n", debitoLatam);
+					printf("b) Precio con tarjeta de credito: $%.2f\n", creditoLatam);
+					printf("c) Precio pagando con Bitcoin: $%.6f\n", btcLatam);
+					printf("d) Precio unitario: $%.2f\n\nAerolineas:\n", pxkmLatam);
 					printf("\n\nLa diferencia de precio es: $%.2f\n\n", diferencia);				}
 				break;
 
@@ -110,13 +110,13 @@ void menu(){
 				diferencia = resta(y, z);
 
 				printf("\n\n*Aerolineas:\n");
-				printf("a) Precio con tarjeta de débito: %.2f\n", debitoAero);
-				printf("b) Precio con tarjeta de crédito: %.2f\n", creditoAero);
+				printf("a) Precio con tarjeta de dï¿½bito: %.2f\n", debitoAero);
+				printf("b) Precio con tarjeta de crï¿½dito: %.2f\n", creditoAero);
 				printf("c) Precio pagando con Bitcoin: %.6f\n", btcAero);
 				printf("d) Precio unitario: %.2f\n", pxkmAero);
 				printf("\n*Latam:\n");
-				printf("a) Precio con tarjeta de débito: %.2f\n", debitoLatam);
-				printf("b) Precio con tarjeta de crédito: %.2f\n", creditoLatam);
+				printf("a) Precio con tarjeta de dï¿½bito: %.2f\n", debitoLatam);
+				printf("b) Precio con tarjeta de crï¿½dito: %.2f\n", creditoLatam);
 				printf("c) Precio pagando con Bitcoin: %.6f\n", btcLatam);
 				printf("d) Precio unitario: %.2f\n", pxkmLatam);
 				printf("\n\nLa diferencia de precio es: $%.2f\n\n", diferencia);

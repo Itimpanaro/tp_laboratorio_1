@@ -10,30 +10,30 @@
 #include <stdlib.h>
 #include "funciones.h"
 
-float km (float km){
+float km (void){
 	float x;
 	printf("\nIngreso de Kilometros\n\nIngrese cantidad de Kilometros:> ");
-	scanf("%.2f", &x);
+	scanf("%f", &x);
 
 	return x;
 }
 
-float precioAero(float price){
+float precioAero(void){
 	float precio;
 
 	printf("\n\nIngrese precio de vuelo Aerolineas: ");
-	scanf("%.2f", &precio);
+	scanf("%f", &precio);
 
 	return precio;
 }
 
-float precioLatam(float price){
+float precioLatam(void){
 
 	float precio;
 
 	printf("\nIngrese precio de vuelo Latam: ");
 	fflush(stdin);
-	scanf("%.2f", &precio);
+	scanf("%f", &precio);
 
 	return precio;
 }
@@ -78,7 +78,7 @@ float precioxkm(float precioIngresado, float kmIngresado){
 float resta(float y, float z){
 	int resta;
 
-	if( y < z){
+	if( y > z){
 		resta = y - z;
 	}
 	else{
